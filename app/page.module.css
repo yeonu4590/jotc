@@ -1,167 +1,203 @@
-.page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
+/* 다크모드, 중계 스타일 */
+.wrapper {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0b0f1a, #111827);
+  color: #e5e7eb;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+/* 기존 CSS 유지 */
 
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
+.scoreRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scoreLabel {
+  font-weight: 600;
+  color: #e5e7eb;
+  opacity: 0.9;
+}
+
+.scoreSep {
+  margin: 0 4px;
+  opacity: 0.7;
+}
+
+.scoreInput {
+  width: 32px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: inherit;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  height: 1.6em;
+  line-height: 1.4;
+  padding: 0 2px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.scoreInput {
+  width: 40px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: inherit;
+  resize: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  height: auto;
+}
+
+.header {
+  padding: 20px; /* 커짐 */
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.titleRow {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.title {
+  font-size: 32px; /* 커짐 */
+  font-weight: 700;
+  background: linear-gradient(90deg, #06b6d4, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.event {
+  font-size: 16px; /* 커짐 */
+  color: #9ca3af;
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
-}
-
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
-}
-
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
-}
-
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
-.ctas {
-  display: flex;
-  gap: 16px;
-}
-
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-  cursor: pointer;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
+  padding: 24px;
 }
 
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
+.panelPrimary {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* 커짐 */
 }
 
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 158px;
+.bodyRowAudience {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* 커짐 */
+}
+
+.previewGridAudience {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px; /* 커짐 */
+}
+
+.previewCardAudience {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.nameInput {
+  width: 100%;
+  text-align: center;
+  font-size: 20px; /* 커짐 */
+  font-weight: bold;
+  color: inherit;
+  resize: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  padding: 12px; /* 커짐 */
+  height: auto;
+  white-space: nowrap; /* 한 줄 유지 */
+}
+
+.previewBodyAudience {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f172a;
+}
+
+.previewImageAudience {
+  position: relative;
+  width: 100%;   /* 가로 크기 기준 */
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 비율 유지 */
+}
+
+.previewImageAudience > img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.previewFooterAudience {
+  padding: 12px; /* 커짐 */
+  font-size: 15px; /* 커짐 */
+  color: #d1d5db;
+  background: rgba(255,255,255,0.08);
+}
+
+.timerCardAudience {
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 54px; /* 커짐 */
+  font-weight: bold;
+  padding: 24px; /* 커짐 */
+  color: #f9fafb;
+  text-shadow: 0 0 12px #06b6d4, 0 0 24px #7c3aed;
+}
+
+.bottomBannerAudience {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 14px 18px; /* 커짐 */
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px; /* 커짐 */
+  color: #e5e7eb;
+}
+
+.sub {
+  color: #9ca3af;
+  font-size: 14px; /* 커짐 */
 }
 
 .footer {
-  grid-row-start: 3;
-  display: flex;
-  gap: 24px;
-}
-
-.footer a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.footer img {
-  flex-shrink: 0;
-}
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
-}
-
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
-  }
-
-  .main {
-    align-items: center;
-  }
-
-  .main ol {
-    text-align: center;
-  }
-
-  .ctas {
-    flex-direction: column;
-  }
-
-  .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
-  }
-
-  a.secondary {
-    min-width: auto;
-  }
-
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
+  padding: 14px; /* 커짐 */
+  text-align: center;
+  font-size: 13px; /* 커짐 */
+  color: #6b7280;
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
