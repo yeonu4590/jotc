@@ -38,8 +38,8 @@ export default function Home() {
 
   useEffect(() => {
     const handleKey = (e) => {
-      if (e.key === "1") setIsRunning((r) => !r);
-      else if (e.key === "2") {
+      if (e.key === "n") setIsRunning((r) => !r);
+      else if (e.key === "m") {
         setIsRunning(false);
         setRemaining(minutes * 60);
       }
