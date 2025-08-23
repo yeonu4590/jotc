@@ -59,7 +59,7 @@ export default function Home() {
       <header className={styles.header}>
         <div className={styles.titleRow}>
           <h1 className={styles.title}>JOTC</h1>
-          <div className={styles.event}>32강</div>
+          <div className={styles.event}>16강</div>
         </div>
       </header>
 
@@ -82,7 +82,7 @@ export default function Home() {
                 </div>
                 <div className={styles.previewFooterAudience}>
                   <div className={styles.scoreRow}>
-                    <span className={styles.scoreLabel}>Clear :</span>
+                    <span className={styles.scoreLabel}>Score :</span>
                     <textarea
                       value={leftClear}
                       onChange={(e) =>
@@ -120,7 +120,7 @@ export default function Home() {
                 </div>
                 <div className={styles.previewFooterAudience}>
                   <div className={styles.scoreRow}>
-                    <span className={styles.scoreLabel}>Clear :</span>
+                    <span className={styles.scoreLabel}>Score :</span>
                     <textarea
                       value={rightClear}
                       onChange={(e) =>
